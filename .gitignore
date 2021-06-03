@@ -1,0 +1,3 @@
+env/*
+server/config/config.py
+server/__pycache__/*
