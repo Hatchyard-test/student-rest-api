@@ -43,7 +43,7 @@ class UpdateStudentModel(BaseModel):
             }
         }
 
-
+# Api response model
 class StudentResponseModel(BaseModel):
     id: str= Field(...)
     firstName: str= Field(...)

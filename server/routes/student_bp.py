@@ -12,6 +12,7 @@ from controllers.student_controller import (
 
 student = APIRouter() 
 
+# Error status codes for swagger doc
 responses = {
         404: {
             "description": "Error: Not Found",
@@ -32,7 +33,7 @@ responses = {
 }
 
 
-# Endpoints routes for api
+# Endpoints routes for studentdetails api
 student.get('/',responses=responses, response_description="Students retrieved")(retrieve_students_data)
 
 student.get('/{id}',responses=responses,response_model = StudentResponseModel, response_description="Student data retrieved")(retrieve_student_data)
