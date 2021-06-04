@@ -47,3 +47,16 @@ async def update_student(id: str, data: dict) -> dict:
             {"_id": ObjectId(id)}, {"$set": data}
         )
     return await studentDb.find_one({"_id": ObjectId(id)})
+
+
+# Delete a student from database
+async def delete_student(id: str):
+    try:
+        result = await studentDb.find_one_and_delete({"_id": ObjectId(id)})
+        if result.acknowledged:
+            return True 
+        else:
+            return False
+            
+    except Exception as e:
+        print("An exception occurred ::", e)
