@@ -35,17 +35,25 @@ async def retrieve_students():
 
 # Retrive a student matching with id from the database
 async def retrieve_student(id: str) -> dict:
-    student = studentDb.find_one({"_id": ObjectId(id)})
-    if student:
-        return student_template(student)
+    try:
+        student = studentDb.find_one({"_id": ObjectId(id)})
+        if student:
+            return student_template(student)
+
+    except Exception as e:
+        print("An exception occurred ::", e)
 
 
 # Update a student by maching ID
 async def update_student(id: str, data: dict) -> dict:
-    studentDb.find_one_and_update(
-            {"_id": ObjectId(id)}, {"$set": data}
-        )
-    return student_template(studentDb.find_one({"_id": ObjectId(id)}))
+    try:
+        studentDb.find_one_and_update(
+                {"_id": ObjectId(id)}, {"$set": data}
+            )
+        return student_template(studentDb.find_one({"_id": ObjectId(id)}))
+
+    except Exception as e:
+        print("An exception occurred ::", e)
 
 
 # Delete a student from database
@@ -57,5 +65,8 @@ async def delete_student(id: str):
         else:
             return False
             
+    except KeyError as e:
+        print("An keyerror occurred ::", e)
     except Exception as e:
         print("An exception occurred ::", e)
+    

@@ -43,18 +43,30 @@ class UpdateStudentModel(BaseModel):
             }
         }
 
-#Return structure as response when suceed
-def ResponseModel(data, message):
-    return {
-        "data": [data],
-        "code": 200,
-        "message": message,
-    }
 
-#Return structure as response when error
-def ErrorResponseModel(error, code, message):
-    return {
-        "error": error,
-        "code": code,
-        "message": message,
-    }
+class StudentResponseModel(BaseModel):
+    id: str= Field(...)
+    firstName: str= Field(...)
+    lastName:str= Field(...)
+    age:  int = Field(...)
+    email: EmailStr = Field(...)
+    course:str = Field(...)
+    gpa: float = Field(..., le=4.0)
+
+
+
+# #Return structure as response when suceed
+# def ResponseModel(data, message):
+#     return {
+#         "data": [data],
+#         "code": 200,
+#         "message": message,
+#     }
+
+# #Return structure as response when error
+# def ErrorResponseModel(error, code, message):
+#     return {
+#         "error": error,
+#         "code": code,
+#         "message": message,
+#     }
