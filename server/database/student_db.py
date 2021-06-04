@@ -43,11 +43,7 @@ async def retrieve_student(id: str) -> dict:
 
 # Update a student by maching ID
 async def update_student(id: str, data: dict) -> dict:
-    if len(data) < 1:
-        return False
-    
-    
-    student = await studentDb.find_one_and_update(
+    await studentDb.find_one_and_update(
             {"_id": ObjectId(id)}, {"$set": data}
         )
     return await studentDb.find_one({"_id": ObjectId(id)})
