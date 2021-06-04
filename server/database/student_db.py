@@ -42,17 +42,17 @@ async def retrieve_student(id: str) -> dict:
 
 # Update a student by maching ID
 async def update_student(id: str, data: dict) -> dict:
-    await studentDb.find_one_and_update(
+    studentDb.find_one_and_update(
             {"_id": ObjectId(id)}, {"$set": data}
         )
-    return await studentDb.find_one({"_id": ObjectId(id)})
+    return student_template(studentDb.find_one({"_id": ObjectId(id)}))
 
 
 # Delete a student from database
 async def delete_student(id: str):
     try:
-        result = await studentDb.find_one_and_delete({"_id": ObjectId(id)})
-        if result.acknowledged:
+        result = studentDb.find_one_and_delete({"_id": ObjectId(id)})
+        if result:
             return True 
         else:
             return False
