@@ -28,14 +28,14 @@ async def add_student(student: dict) -> dict:
 # Retrieves all students from the database
 async def retrieve_students():
     students = []
-    async for student in studentDb.find():
+    for student in studentDb.find():
         students.append(student_template(student))
     return students
 
 
 # Retrive a student matching with id from the database
 async def retrieve_student(id: str) -> dict:
-    student = await studentDb.find_one({"_id": ObjectId(id)})
+    student = studentDb.find_one({"_id": ObjectId(id)})
     if student:
         return student_template(student)
 

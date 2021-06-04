@@ -13,11 +13,19 @@ from database.student_db import (
 
 # Get all student from db and return as response model
 async def retrieve_students_data():
-    pass
+    students = await retrieve_students()
+    if students:
+        return ResponseModel(students, "Students data retrieved successfully")
+    return ResponseModel(students, "Empty list returned")
+
+
 
 # Retrieve a student by id from db and return as response model
 async def retrieve_student_data(id: str):
-    pass
+    student = await retrieve_student(id)
+    if student:
+        return ResponseModel(student, "Student data retrieved successfully")
+    return ErrorResponseModel("An error occurred.", 404, "Student doesn't exist.")
 
 # Insert a student into db and return as response model
 async def add_student_data(student: Student):
