@@ -1,7 +1,8 @@
 from bson.objectid import ObjectId
 from config.db import conn
 
-studentDb = conn.student
+studentDb = conn.students.student_details
+
 
 def student_template(student):
     return {
@@ -16,14 +17,12 @@ def student_template(student):
 
 # Add a new student to database
 async def add_student(student: dict) -> dict:
-
     try:
         result = studentDb.insert_one(student)
-        newStudent = await  studentDb.find_one({"_id": result.inserted_id})
+        newStudent = studentDb.find_one({"_id": result.inserted_id})
         return student_template(newStudent)
     except Exception as e:
         print("An exception occurred ::", e)
-
     
 
 # Retrieves all students from the database
