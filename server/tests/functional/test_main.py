@@ -15,6 +15,14 @@ inputData ={
   "gpa": 4
 }
 
+# Input data for update for test
+updateData = {
+  "firstName": "Nimal",
+  "lastName": "Jayawardana",
+  "course": "engineering",
+  "gpa": 4
+}
+
 # Input invalid data for test
 invalidData ={
   "firstName": "Lasitha",
@@ -72,4 +80,15 @@ def test_retrieve_student_data():
 def test_retrieve_student_data_404():
     response = client.get("/api/someid")
     assert response.status_code == 404
-  
+
+
+# Test Update a student in db api endpoint 
+def test_update_student_data():
+    response = client.put("/api/" + objId + "", json=updateData)
+    assert response.status_code == 200
+
+# Test Update a student in db api endpoint with wrone id
+def test_update_student_data_404():
+    response = client.put("/api/someid", json=updateData)
+    assert response.status_code == 404
+

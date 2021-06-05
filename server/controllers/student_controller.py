@@ -24,7 +24,6 @@ async def retrieve_student_data(id: str):
     student = await retrieve_student(id)
     if student is None:
         raise HTTPException(status_code=404, detail="Item not found")
-    print(student)
     return student
 
 
@@ -32,11 +31,11 @@ async def retrieve_student_data(id: str):
 async def add_student_data(student: Student):
     student = jsonable_encoder(student)
     new_student = await add_student(student)
-    print(new_student)
     return new_student
 
 # Update a student in db and return as response model
 async def update_student_data(id: str,student: UpdateStudentModel):
+    student = {k: v for k, v in student.dict().items() if v is not None}# Keep not None value keys
     student = jsonable_encoder(student)
     updated_student = await update_student(id, student)
     if updated_student is None:
