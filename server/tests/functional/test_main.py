@@ -92,3 +92,13 @@ def test_update_student_data_404():
     response = client.put("/api/someid", json=updateData)
     assert response.status_code == 404
 
+
+# Test Delete a student by id api endpoint 
+def test_delete_student_data():
+    response = client.delete("/api/" + objId + "")
+    assert response.status_code == 204
+
+# Test Delete a student by id api endpoint with wrone id
+def test_delete_student_data_404():
+    response = client.delete("/api/someid")
+    assert response.status_code == 404
