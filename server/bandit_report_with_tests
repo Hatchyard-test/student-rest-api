@@ -1,0 +1,767 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+    Bandit Report
+</title>
+
+<style>
+
+html * {
+    font-family: "Arial", sans-serif;
+}
+
+pre {
+    font-family: "Monaco", monospace;
+}
+
+.bordered-box {
+    border: 1px solid black;
+    padding-top:.5em;
+    padding-bottom:.5em;
+    padding-left:1em;
+}
+
+.metrics-box {
+    font-size: 1.1em;
+    line-height: 130%;
+}
+
+.metrics-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: .25em;
+}
+
+.issue-description {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.candidate-issues {
+    margin-left: 2em;
+    border-left: solid 1px; LightGray;
+    padding-left: 5%;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.issue-block {
+    border: 1px solid LightGray;
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+.issue-sev-high {
+    background-color: Pink;
+}
+
+.issue-sev-medium {
+    background-color: NavajoWhite;
+}
+
+.issue-sev-low {
+    background-color: LightCyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="metrics">
+    <div class="metrics-box bordered-box">
+        <div class="metrics-title">
+            Metrics:<br>
+        </div>
+        Total lines of code: <span id="loc">291</span><br>
+        Total lines skipped (#nosec): <span id="nosec">0</span>
+    </div>
+</div>
+
+
+
+
+<br>
+<div id="results">
+    
+<div id="issue-0">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+50	    response = client.post(&quot;/api/&quot;, json=inputData)
+51	    assert response.status_code == 201
+52	    assert response.headers[&quot;Content-Type&quot;] == &quot;application/json&quot;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-1">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+51	    assert response.status_code == 201
+52	    assert response.headers[&quot;Content-Type&quot;] == &quot;application/json&quot;
+53	    response_body = response.json()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-2">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+55	    objId = response_body[&quot;id&quot;]
+56	    assert len(objId) == 24
+57	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-3">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+60	    response = client.post(&quot;/api/&quot;, json=invalidData)
+61	    assert response.status_code == 422
+62	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-4">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+66	    response = client.get(&quot;/api/&quot;)
+67	    assert response.status_code == 200
+68	    output = outputData(objId)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-5">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+68	    output = outputData(objId)
+69	    assert output in response.json()
+70	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-6">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+74	    response = client.get(&quot;/api/&quot; + objId + &quot;&quot;)
+75	    assert response.status_code == 200
+76	    output = outputData(objId)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-7">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+76	    output = outputData(objId)
+77	    assert output == response.json()
+78	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-8">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+81	    response = client.get(&quot;/api/someid&quot;)
+82	    assert response.status_code == 404
+83	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-9">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+87	    response = client.put(&quot;/api/&quot; + objId + &quot;&quot;, json=updateData)
+88	    assert response.status_code == 200
+89	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-10">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+92	    response = client.put(&quot;/api/someid&quot;, json=updateData)
+93	    assert response.status_code == 404
+94	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-11">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+98	    response = client.delete(&quot;/api/&quot; + objId + &quot;&quot;)
+99	    assert response.status_code == 204
+100	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-12">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\functional\test_main.py" target="_blank">.\tests\functional\test_main.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+103	    response = client.delete(&quot;/api/someid&quot;)
+104	    assert response.status_code == 404
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-13">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+13	    
+14	    assert student.firstName == &#x27;Lasitha&#x27;
+15	    assert student.lastName == &#x27;Jayawardana&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-14">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+14	    assert student.firstName == &#x27;Lasitha&#x27;
+15	    assert student.lastName == &#x27;Jayawardana&#x27;
+16	    assert student.age == 20
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-15">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+15	    assert student.lastName == &#x27;Jayawardana&#x27;
+16	    assert student.age == 20
+17	    assert student.email == &#x27;user@example.com&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-16">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+16	    assert student.age == 20
+17	    assert student.email == &#x27;user@example.com&#x27;
+18	    assert student.course == &#x27;engineering&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-17">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+17	    assert student.email == &#x27;user@example.com&#x27;
+18	    assert student.course == &#x27;engineering&#x27;
+19	    assert student.gpa == 4
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-18">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+18	    assert student.course == &#x27;engineering&#x27;
+19	    assert student.gpa == 4
+20	    
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-19">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+31	    
+32	    assert student.firstName == &#x27;Lasitha&#x27;
+33	    assert student.lastName == &#x27;Jayawardana&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-20">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+32	    assert student.firstName == &#x27;Lasitha&#x27;
+33	    assert student.lastName == &#x27;Jayawardana&#x27;
+34	    assert student.age == 20
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-21">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+33	    assert student.lastName == &#x27;Jayawardana&#x27;
+34	    assert student.age == 20
+35	    assert student.email == &#x27;user@example.com&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-22">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+34	    assert student.age == 20
+35	    assert student.email == &#x27;user@example.com&#x27;
+36	    assert student.course == &#x27;engineering&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-23">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+35	    assert student.email == &#x27;user@example.com&#x27;
+36	    assert student.course == &#x27;engineering&#x27;
+37	    assert student.gpa == 4
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-24">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+36	    assert student.course == &#x27;engineering&#x27;
+37	    assert student.gpa == 4
+38	        
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-25">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+50	
+51	    assert student.id == &#x27;emnffjefjnefwjnefefnwfjn&#x27;
+52	    assert student.firstName == &#x27;Lasitha&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-26">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+51	    assert student.id == &#x27;emnffjefjnefwjnefefnwfjn&#x27;
+52	    assert student.firstName == &#x27;Lasitha&#x27;
+53	    assert student.lastName == &#x27;Jayawardana&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-27">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+52	    assert student.firstName == &#x27;Lasitha&#x27;
+53	    assert student.lastName == &#x27;Jayawardana&#x27;
+54	    assert student.age == 20
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-28">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+53	    assert student.lastName == &#x27;Jayawardana&#x27;
+54	    assert student.age == 20
+55	    assert student.email == &#x27;user@example.com&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-29">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+54	    assert student.age == 20
+55	    assert student.email == &#x27;user@example.com&#x27;
+56	    assert student.course == &#x27;engineering&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-30">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+55	    assert student.email == &#x27;user@example.com&#x27;
+56	    assert student.course == &#x27;engineering&#x27;
+57	    assert student.gpa == 4
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-31">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href=".\tests\unit\test_models.py" target="_blank">.\tests\unit\test_models.py</a> <br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+56	    assert student.course == &#x27;engineering&#x27;
+57	    assert student.gpa == 4
+</pre>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
