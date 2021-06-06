@@ -23,9 +23,8 @@ Run
 ---
 On Windows cmd::
 
-    > cd server
-    > uvicorn main:app --reload
-
+    > python -u server/main.py
+    
 API Swagger doc URL:
 
 Open http://localhost:8000/docs in a browser.
