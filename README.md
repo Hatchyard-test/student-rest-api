@@ -43,6 +43,21 @@ On Windows cmd::
 
     > bandit -r . -f html -o bandit_report -x .\tests
 
+Run from Docker
+-------
+
+To build a container and run::
+
+    $ docker-compose up -d --build
+
+    
+API Swagger doc URL:
+Open http://localhost:8000/docs in a browser.
+
+To run test cases::
+
+    $ docker-compose exec web pytest .
+
 
 Features
 ---
